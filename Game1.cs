@@ -31,16 +31,28 @@ namespace main
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            texture = Content.Load<Texture2D>("Images/bb");
+            texture = Content.Load<Texture2D>("Images/BlackHouse");
             position = new Vector2(0, 0);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
+            if(Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                position.Y -= 10; //Position.Y = position.Y - 1
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                position.Y += 10; //PosY goes down 1
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                position.X += 10; //PosX goes right 1
+            }
+            if(Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                position.X -= 10; //PosX goes left 1
+            }
 
             base.Update(gameTime);
         }
@@ -51,7 +63,7 @@ namespace main
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, position, Color.White);
+            spriteBatch.Draw(texture, position, Color.Black);
             spriteBatch.End();
 
             base.Draw(gameTime);
