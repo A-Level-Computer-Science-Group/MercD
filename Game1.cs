@@ -12,6 +12,8 @@ namespace main
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            <FontName>Arial</FontName>
+            <Size>12</Size>
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -28,6 +30,7 @@ namespace main
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            Texture2D image = Content.Load<Texture2D>("Images/bb");
         }
 
         protected override void Update(GameTime gameTime)
