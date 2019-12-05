@@ -8,7 +8,8 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        private Sprite sprite1;
+        private Sprite2 sprite2;
         private Texture2D texture;
         private Vector2 position;
 
@@ -33,26 +34,24 @@ namespace main
             // TODO: use this.Content to load your game content here
             texture = Content.Load<Texture2D>("Images/BlackHouse");
             position = new Vector2(0, 0);
+
+            sprite1 = new Sprite(texture)
+            {
+                position = new Vector2(100,100),
+                Speed = 3f,
+            };
+            sprite2 = new Sprite2(texture)
+            {
+                position = new Vector2(200,100),
+                Speed = 3f,
+            };
+            
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if(Keyboard.GetState().IsKeyDown(Keys.W))
-            {
-                position.Y -= 10; //Position.Y = position.Y - 1
-            }
-            if(Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                position.Y += 10; //PosY goes down 1
-            }
-            if(Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                position.X += 10; //PosX goes right 1
-            }
-            if(Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                position.X -= 10; //PosX goes left 1
-            }
+            sprite1.Update();
+            sprite2.Update();
 
             base.Update(gameTime);
         }
@@ -63,10 +62,14 @@ namespace main
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(texture, position, Color.Black);
+
+            sprite1.Draw(spriteBatch);
+            sprite2.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);
+
         }
     }
 }
