@@ -14,7 +14,6 @@ namespace main
         private Texture2D texture;
         public Vector2 position;
 
-
         public Sprite(Texture2D texture)
         {
             this.texture = texture;

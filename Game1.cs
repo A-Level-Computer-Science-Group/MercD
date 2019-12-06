@@ -64,8 +64,8 @@ namespace main
 
             float interval = (float)(gameTime.TotalGameTime - lastTime).TotalSeconds;
             System.Console.WriteLine(interval);
-            sprite1.Update(interval,Speed);
-            //sprite2.Update(interval);
+            sprite1.Update(interval, Speed);
+            sprite2.Update(interval, Speed);
 
             lastTime = gameTime.TotalGameTime;
             
@@ -80,12 +80,11 @@ namespace main
             spriteBatch.Begin();
 
             sprite1.Draw(spriteBatch);
-            //sprite2.Draw(spriteBatch);
+            sprite2.Draw(spriteBatch);
 
             spriteBatch.End();
 
             base.Draw(gameTime);
-
         }
     }
 }

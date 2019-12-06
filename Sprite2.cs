@@ -14,14 +14,12 @@ namespace main
         private Texture2D texture;
         public Vector2 position;
 
-        public float Speed = 10000000000000000000000000f;
-
         public Sprite2(Texture2D texture)
         {
             this.texture = texture;
         }
 
-        public void Update(double interval)
+        public void Update(double interval, float Speed)
         {
             if(Keyboard.GetState().IsKeyDown(Keys.Up))
             {
@@ -39,10 +37,6 @@ namespace main
             {
                 position.X -= Speed * (float)interval; //PosX goes left 1
             }
-            Console.WriteLine(Speed * (float)interval);
-            System.Console.WriteLine(interval);
-            System.Console.WriteLine(Speed);
-            
         }
 
         public void Draw(SpriteBatch spriteBatch)
