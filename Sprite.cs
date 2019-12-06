@@ -14,30 +14,29 @@ namespace main
         private Texture2D texture;
         public Vector2 position;
 
-        public float Speed = 2f;
 
         public Sprite(Texture2D texture)
         {
             this.texture = texture;
         }
 
-        public void Update()
+        public void Update(double interval, float Speed)
         {
             if(Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                position.Y -= Speed; //Position.Y = position.Y - 1
+                position.Y -= Speed * (float)interval; //Position.Y = position.Y - 1
             }
             if(Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                position.Y += Speed; //PosY goes down 1
+                position.Y += Speed * (float)interval; //PosY goes down 1
             }
             if(Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                position.X += Speed; //PosX goes right 1
+                position.X += Speed * (float)interval; //PosX goes right 1
             }
             if(Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                position.X -= Speed; //PosX goes left 1
+                position.X -= Speed * (float)interval; //PosX goes left 1
             }
         }
 

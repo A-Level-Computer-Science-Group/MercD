@@ -1,17 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 namespace main
 {
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        TimeSpan lastTime;
         private Sprite sprite1;
         private Sprite2 sprite2;
         private Texture2D texture;
         private Vector2 position;
+
+        public float Speed = 100f;
+
 
         public Game1()
         {
@@ -37,22 +46,29 @@ namespace main
 
             sprite1 = new Sprite(texture)
             {
-                position = new Vector2(100,100),
-                Speed = 3f,
+                position = new Vector2(100, 100),
             };
             sprite2 = new Sprite2(texture)
             {
-                position = new Vector2(200,100),
-                Speed = 3f,
+                position = new Vector2(200, 100),
             };
-            
+
         }
 
         protected override void Update(GameTime gameTime)
         {
-            sprite1.Update();
-            sprite2.Update();
+            if (lastTime == null)
+            {
+                lastTime = gameTime.TotalGameTime;
+            }
 
+            float interval = (float)(gameTime.TotalGameTime - lastTime).TotalSeconds;
+            System.Console.WriteLine(interval);
+            sprite1.Update(interval,Speed);
+            //sprite2.Update(interval);
+
+            lastTime = gameTime.TotalGameTime;
+            
             base.Update(gameTime);
         }
 
@@ -64,7 +80,7 @@ namespace main
             spriteBatch.Begin();
 
             sprite1.Draw(spriteBatch);
-            sprite2.Draw(spriteBatch);
+            //sprite2.Draw(spriteBatch);
 
             spriteBatch.End();
 
