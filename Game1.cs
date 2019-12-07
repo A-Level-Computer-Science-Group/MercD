@@ -10,6 +10,8 @@ namespace main
 {
     public class Game1 : Game
     {
+        private SpriteFont font;
+        private int score = 0;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -38,6 +40,7 @@ namespace main
 
         protected override void LoadContent()
         {
+            font = Content.Load<SpriteFont>("Score");
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
@@ -63,9 +66,13 @@ namespace main
             }
 
             float interval = (float)(gameTime.TotalGameTime - lastTime).TotalSeconds;
-            System.Console.WriteLine(interval);
             sprite1.Update(interval, Speed);
             sprite2.Update(interval, Speed);
+            System.Console.WriteLine((sprite2.position,sprite1.position));
+            if (sprite2.position == sprite1.position)
+            {
+                score++;
+            }
 
             lastTime = gameTime.TotalGameTime;
             
@@ -74,11 +81,11 @@ namespace main
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.WhiteSmoke);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-
+            spriteBatch.DrawString(font, "Score: " + score, new Vector2(100,100), Color.Black);
             sprite1.Draw(spriteBatch);
             sprite2.Draw(spriteBatch);
 
