@@ -12,6 +12,9 @@ namespace main
     {
         private SpriteFont font;
         private int score = 0;
+
+        private Texture2D arrow;
+        private float angle = 0;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -40,13 +43,14 @@ namespace main
 
         protected override void LoadContent()
         {
+            arrow = Content.Load<Texture2D>("Images/Arrow");
             font = Content.Load<SpriteFont>("Score");
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            
             // TODO: use this.Content to load your game content here
+            
             texture = Content.Load<Texture2D>("Images/BlackHouse");
             position = new Vector2(0, 0);
-
             sprite1 = new Sprite(texture)
             {
                 position = new Vector2(100, 100),
@@ -55,7 +59,6 @@ namespace main
             {
                 position = new Vector2(200, 100),
             };
-
         }
 
         protected override void Update(GameTime gameTime)
@@ -69,10 +72,7 @@ namespace main
             sprite1.Update(interval, Speed);
             sprite2.Update(interval, Speed);
             System.Console.WriteLine((sprite2.position,sprite1.position));
-            if (sprite2.position == sprite1.position)
-            {
-                score++;
-            }
+            angle += 0.1f;
 
             lastTime = gameTime.TotalGameTime;
             
@@ -85,6 +85,10 @@ namespace main
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            Vector2 location = new Vector2(400, 240);
+            Rectangle sourceRectangle = new Rectangle(0, 0, arrow.Width, arrow.Height);
+            Vector2 origin = new Vector2(0, 0);
+            spriteBatch.Draw(arrow, location, sourceRectangle, Color.White, angle, origin, 1.0f, SpriteEffects.None, 1);
             spriteBatch.DrawString(font, "Score: " + score, new Vector2(100,100), Color.Black);
             sprite1.Draw(spriteBatch);
             sprite2.Draw(spriteBatch);
