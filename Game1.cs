@@ -41,7 +41,7 @@ namespace main
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.WhiteSmoke);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
 
