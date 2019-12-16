@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,7 +11,6 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -19,6 +21,7 @@ namespace main
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            Window.AllowUserResizing = true;
 
             base.Initialize();
         }
