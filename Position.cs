@@ -2,11 +2,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace main
+namespace Physics
 {
     class Position
     {
-        public float xPos {get;set;}
-        public float yPos {get;set;}
+        public float xPos;
+        public float yPos;
     }
 }
