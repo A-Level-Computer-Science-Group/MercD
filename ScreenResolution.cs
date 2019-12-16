@@ -13,7 +13,7 @@ namespace main
             width = window.ClientBounds.Width;
         }
 
-        public void Resolution()
+        public void ConsoleWrite()
         {
             Console.WriteLine($"Width:{width} Height:{height}");
         }
