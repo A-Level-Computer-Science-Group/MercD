@@ -35,6 +35,7 @@ namespace main
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             // TODO: Add your update logic here
+            screenResolution.Update(Window);
             screenResolution.Resolution();
             base.Update(gameTime);
         }
