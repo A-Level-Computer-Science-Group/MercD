@@ -6,7 +6,6 @@ namespace main
     {
         public int height { get; private set; }
         public int width { get; private set; }
-        // Prints width and height of windows
         public void Update(GameWindow window)
         {
             height = window.ClientBounds.Height;
@@ -15,6 +14,7 @@ namespace main
 
         public void ConsoleWrite()
         {
+            // Prints width and height of windows
             Console.WriteLine($"Width:{width} Height:{height}");
         }
     }
