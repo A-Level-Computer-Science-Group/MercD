@@ -4,8 +4,8 @@ namespace main
 {
     public class ScreenResolution
     {
-        private int height;
-        private int width;
+        public int height { get; private set; }
+        public int width { get; private set; }
         // Prints width and height of windows
         public void Update(GameWindow window)
         {
