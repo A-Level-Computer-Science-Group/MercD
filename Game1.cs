@@ -9,8 +9,6 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private int width;
-        private int height;
         ScreenResolution screenResolution = new ScreenResolution();
         public Game1()
         {
@@ -32,17 +30,12 @@ namespace main
 
             // TODO: use this.Content to load your game content here
         }
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
             // TODO: Add your update logic here
-            // gets the current width and height of the window and pushes it into the method of the ScreenRes class
-            screenResolution.ResCalc((width = Window.ClientBounds.Width), (height = Window.ClientBounds.Height));
-
-
+            screenResolution.Resolution();
             base.Update(gameTime);
         }
 
