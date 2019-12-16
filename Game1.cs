@@ -11,6 +11,8 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private int width;
+        private int height;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -22,7 +24,6 @@ namespace main
         {
             // TODO: Add your initialization logic here
             Window.AllowUserResizing = true;
-
             base.Initialize();
         }
 
@@ -39,13 +40,18 @@ namespace main
                 Exit();
 
             // TODO: Add your update logic here
+            // Gets the width and height of the current window size
+            width = Window.ClientBounds.Width;
+            height = Window.ClientBounds.Height;
+            // Prints the width and height of the current window
+            System.Console.WriteLine($"Width:{width}, Height:{height}");
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.WhiteSmoke);
 
             // TODO: Add your drawing code here
 
