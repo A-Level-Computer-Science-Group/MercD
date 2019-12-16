@@ -11,6 +11,7 @@ namespace main
         SpriteBatch spriteBatch;
         private int width;
         private int height;
+        ScreenResolution screenResolution = new ScreenResolution();
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,11 +39,9 @@ namespace main
                 Exit();
 
             // TODO: Add your update logic here
-            // Gets the width and height of the current window size
-            width = Window.ClientBounds.Width;
-            height = Window.ClientBounds.Height;
-            // Prints the width and height of the current window
-            System.Console.WriteLine($"Width:{width}, Height:{height}");
+            // gets the current width and height of the window and pushes it into the method of the ScreenRes class
+            screenResolution.ResCalc((width = Window.ClientBounds.Width), (height = Window.ClientBounds.Height));
+
 
             base.Update(gameTime);
         }
