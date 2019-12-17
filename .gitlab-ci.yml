@@ -13,11 +13,7 @@ before_script:
   - apt-get install fontconfig tree -y
   - dotnet tool install -g dotnet-format
   - echo $PWD
-  - cd ..
-  - cd ..
-  - cd ..
-  - cd root
-  - cd .dotnet
+  - cd ../../../root/.dotnet
   - tree -a
   - echo $PATH
 
