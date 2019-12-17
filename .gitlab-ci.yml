@@ -56,8 +56,6 @@ format:
   stage: lint
   script:
     - dotnet tool install -g dotnet-format
-    - echo $PWD
+    # Need to add to path so linux can find `dotnet-format` without a restart
     - export PATH=/root/.dotnet/tools:$PATH
-    - tree -a
-    - echo $PATH
     - dotnet-format --check --dry-run
