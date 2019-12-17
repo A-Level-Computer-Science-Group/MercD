@@ -19,6 +19,7 @@ before_script:
   - cd root
   - cd .dotnet
   - tree -a
+  - echo $PATH
 
 stages:
   - check
