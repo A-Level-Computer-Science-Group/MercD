@@ -11,7 +11,7 @@ before_script:
   - apt-get install fonts-dejavu -y
   # For some reason I need this for fonts to work with monogame.
   - apt-get install fontconfig tree -y
-  - dotnet tool install -g dotnet-format
+  - dotnet tool install dotnet-format
 
 stages:
   - check
