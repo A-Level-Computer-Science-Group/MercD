@@ -13,6 +13,7 @@ before_script:
   - apt-get install fontconfig tree -y
   - dotnet tool install -g dotnet-format
   - cd ..
+  - cd ..
   - tree -a
 
 stages:
