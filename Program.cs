@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace     main
+namespace main
 {
     public static class Program
     {
