@@ -16,7 +16,7 @@ before_script:
 stages:
   - check
   - deploy-examples
-
+  - lint
 
 build:
   stage: check
@@ -52,3 +52,9 @@ linux-optimized:
     paths:
       - files
     expire_in: 2 weeks
+
+format:
+  stage: lint
+  script:
+    - dotnet tool install -g dotnet-format
+    - dotnet format --check --dry-run
