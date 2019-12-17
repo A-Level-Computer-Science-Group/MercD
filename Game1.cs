@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,6 +14,10 @@ namespace main
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            // FPS limit. 1d = 1 second, 60d = 60fps.
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1d / 60d);
+
             IsMouseVisible = true;
         }
 
