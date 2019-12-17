@@ -16,6 +16,8 @@ before_script:
   - cd ..
   - cd ..
   - cd ..
+  - cd root
+  - cd .dotnet
   - tree -a
 
 stages:
