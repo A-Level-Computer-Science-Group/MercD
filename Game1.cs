@@ -8,7 +8,7 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        ScreenResolution screenResolution = new ScreenResolution();
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -19,7 +19,7 @@ namespace main
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Window.AllowUserResizing = true;
             base.Initialize();
         }
 
@@ -29,14 +29,13 @@ namespace main
 
             // TODO: use this.Content to load your game content here
         }
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
             // TODO: Add your update logic here
-
+            screenResolution.Update(Window);
+            screenResolution.ConsoleWrite();
             base.Update(gameTime);
         }
 
