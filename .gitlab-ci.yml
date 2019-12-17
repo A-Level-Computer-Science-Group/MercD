@@ -12,6 +12,7 @@ before_script:
   # For some reason I need this for fonts to work with monogame.
   - apt-get install fontconfig tree -y
   - dotnet tool install -g dotnet-format
+  - cd ..
   - tree -a
 
 stages:
