@@ -4,8 +4,8 @@ namespace main
 {
     public class ScreenResolution
     {
-        public int height { get; private set; }
-        public int width { get; private set; }
+        public static int height { get; private set; }
+        public static int width { get; private set; }
         public void Update(GameWindow window)
         {
             height = window.ClientBounds.Height;
