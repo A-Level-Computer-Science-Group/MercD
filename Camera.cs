@@ -3,15 +3,11 @@ namespace Camera
 {
     public class Camera
     {
-        private int width;
-        private int height;
+        private Rectangle scope;
 
-        public Camera(int width, int height)
+        public Camera(Rectangle scope)
         {
-            this.width = width;
-            this.height = height;
-
-            Rectangle rectangle = new Rectangle(0, 0, width, height);
+            this.scope = scope;
         }
     }
 }
