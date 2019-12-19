@@ -4,5 +4,9 @@ namespace Camera
     {
         private Camera camera;
 
+        public CameraRelative(Camera camera)
+        {
+            this.camera = camera;
+        }
     }
 }
