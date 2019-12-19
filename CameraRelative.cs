@@ -12,7 +12,7 @@ namespace Camera
 
         public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch)
         {
-            Rectangle cameraRelativePosition = destinationRectangle; 
+            Rectangle cameraRelativePosition = destinationRectangle;
             cameraRelativePosition.X = camera.scope.X - destinationRectangle.X;
             cameraRelativePosition.Y = camera.scope.Y - destinationRectangle.Y;
             if (destinationRectangle.Intersects(camera.scope))
