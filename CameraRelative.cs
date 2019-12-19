@@ -15,12 +15,10 @@ namespace Camera
             Rectangle cameraRelativePosition = destinationRectangle; 
             cameraRelativePosition.X = camera.scope.X - destinationRectangle.X;
             cameraRelativePosition.Y = camera.scope.Y - destinationRectangle.Y;
-            spriteBatch.Begin();
             if (destinationRectangle.Intersects(camera.scope))
             {
                 spriteBatch.Draw(texture, cameraRelativePosition, Color.Black);
             }
-            spriteBatch.End();
         }
     }
 }
