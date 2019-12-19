@@ -3,7 +3,7 @@ namespace Camera
 {
     public class Camera
     {
-        private Rectangle scope;
+        public Rectangle scope;
 
         public Camera(Rectangle scope)
         {
