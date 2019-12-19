@@ -12,9 +12,12 @@ namespace Camera
 
         public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch)
         {
-            Rectangle cameraRelativePosition = destinationRectangle;
-            cameraRelativePosition.X = camera.scope.X - destinationRectangle.X;
-            cameraRelativePosition.Y = camera.scope.Y - destinationRectangle.Y;
+            Rectangle cameraRelativePosition = new Rectangle(
+                camera.scope.X - destinationRectangle.X,
+                camera.scope.Y - destinationRectangle.Y,
+                destinationRectangle.Width,
+                destinationRectangle.Height
+            );
             if (destinationRectangle.Intersects(camera.scope))
             {
                 spriteBatch.Draw(texture, cameraRelativePosition, Color.Black);
