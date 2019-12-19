@@ -1,0 +1,7 @@
+namespace main
+{
+    class CameraRelative
+    {
+        
+    }
+}
