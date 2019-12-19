@@ -1,7 +1,8 @@
-namespace main
+namespace Camera
 {
     class CameraRelative
     {
-        
+        private Camera camera;
+
     }
 }
