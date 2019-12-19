@@ -6,7 +6,6 @@ namespace Camera
     {
         private Camera camera;
         private SpriteBatch spriteBatch;
-        private Vector2 positionDifference;
 
         public CameraRelative(Camera camera)
         {
@@ -15,12 +14,13 @@ namespace Camera
 
         public void Draw(Texture2D texture, Rectangle destinationRectangle)
         {
+            Rectangle positionDifference = destinationRectangle; 
             positionDifference.X = camera.scope.X - destinationRectangle.X;
             positionDifference.Y = camera.scope.Y - destinationRectangle.Y;
             spriteBatch.Begin();
             if (destinationRectangle.Intersects(camera.scope))
             {
-                spriteBatch.Draw(texture, destinationRectangle, Color.Black);
+                spriteBatch.Draw(texture, positionDifference, Color.Black);
             }
             spriteBatch.End();
         }
