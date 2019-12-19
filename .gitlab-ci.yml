@@ -10,7 +10,7 @@ before_script:
   - apt-get install dotnet-sdk-3.0 -y
   - apt-get install fonts-dejavu -y
   # For some reason I need this for fonts to work with monogame.
-  - apt-get install fontconfig tree -y
+  - apt-get install fontconfig -y
 
 stages:
   - check
@@ -30,7 +30,6 @@ windows-optimized:
     - rm -r -f files
     - mkdir files
     - cp -r bin/ files
-    - tree
   when: on_success
   artifacts:
     paths:
@@ -45,7 +44,6 @@ linux-optimized:
     - rm -r -f files
     - mkdir files
     - cp -r bin/ files
-    - tree
   when: on_success
   artifacts:
     paths:
