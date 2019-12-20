@@ -6,21 +6,14 @@ namespace Camera
     class CameraRelative
     {
         private Camera camera;
-        private float screenScaleX;
-        private float screenScaleY;
-        private ScreenResolution screenResolution;
         public CameraRelative(Camera camera)
         {
             this.camera = camera;
         }
-
-        public void ScreenScale()
+        public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch, ScreenResolution screenResolution)
         {
-            screenScaleX = screenResolution.width / camera.scope.X;
-            screenScaleY = screenResolution.height / camera.scope.Y;
-        }
-        public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch)
-        {
+            float screenScaleX = screenResolution.width / camera.scope.X;
+            float screenScaleY = screenResolution.height / camera.scope.Y;
             Rectangle cameraRelativeRectangle = new Rectangle(
                 camera.scope.X - destinationRectangle.X,
                 camera.scope.Y - destinationRectangle.Y,
