@@ -24,7 +24,7 @@ namespace Camera
             );
             if (destinationRectangle.Intersects(camera.scope))
             {
-                spriteBatch.Draw(texture, cameraRelativeRectangle, Color.Black);
+                spriteBatch.Draw(texture, cameraRelativeRectangle, Color.White);
             }
         }
     }
