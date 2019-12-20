@@ -10,7 +10,12 @@ namespace Camera
         {
             this.camera = camera;
         }
-        public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch, ScreenResolution screenResolution)
+        public void Draw(
+            Texture2D texture,
+            Rectangle destinationRectangle,
+            SpriteBatch spriteBatch,
+            ScreenResolution screenResolution
+        )
         {
             float screenScaleRatioX = screenResolution.width / camera.scope.X;
             float screenScaleRatioY = screenResolution.height / camera.scope.Y;
