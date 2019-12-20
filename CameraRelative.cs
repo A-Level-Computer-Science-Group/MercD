@@ -22,8 +22,8 @@ namespace Camera
             Rectangle cameraRelativeRectangle = new Rectangle(
                 camera.scope.X - destinationRectangle.X,
                 camera.scope.Y - destinationRectangle.Y,
-                destinationRectangle.Width,
-                destinationRectangle.Height
+                (int)(destinationRectangle.Width * screenScaleRatioX),
+                (int)(destinationRectangle.Height * screenScaleRatioY)
             );
             if (destinationRectangle.Intersects(camera.scope))
             {
