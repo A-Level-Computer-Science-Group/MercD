@@ -43,6 +43,7 @@ namespace main
             // TODO: Add your update logic here
             screenResolution.Update(Window);
             screenResolution.ConsoleWrite();
+            
             base.Update(gameTime);
         }
 
@@ -50,10 +51,10 @@ namespace main
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            Rectangle destinationRectangle = new Rectangle(5, 5, 100, 100);
+            Rectangle destinationRectangle = new Rectangle(0, 0, 100, 100);
             spriteBatch.Begin();
             // TODO: Add your drawing code here
-            (new CameraRelative(new Camera.Camera(new Rectangle(5, 5, 200, 200)))).Draw(texture, destinationRectangle, spriteBatch, screenResolution);
+            (new CameraRelative(new Camera.Camera(new Rectangle(0, 0, 200, 200)))).Draw(texture, destinationRectangle, spriteBatch, screenResolution);
 
             base.Draw(gameTime);
             spriteBatch.End();

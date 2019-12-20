@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using main;
+using System;
 namespace Camera
 {
     class CameraRelative
@@ -12,8 +13,9 @@ namespace Camera
         }
         public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch, ScreenResolution screenResolution)
         {
-            float screenScaleRatioX = screenResolution.width / camera.scope.Width;
-            float screenScaleRatioY = screenResolution.height / camera.scope.Height;
+            float screenScaleRatioX = (float)screenResolution.width / (float)camera.scope.Width;
+            float screenScaleRatioY = (float)screenResolution.height / (float)camera.scope.Height;
+
             Rectangle cameraRelativeRectangle = new Rectangle(
                 camera.scope.X - destinationRectangle.X,
                 camera.scope.Y - destinationRectangle.Y,
