@@ -36,6 +36,7 @@ namespace main
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            texture = Content.Load<Texture2D>("Untitled");
         }
         protected override void Update(GameTime gameTime)
         {
