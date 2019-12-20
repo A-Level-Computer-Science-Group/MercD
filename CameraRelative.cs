@@ -17,8 +17,8 @@ namespace Camera
             float screenScaleRatioY = (float)screenResolution.height / (float)camera.scope.Height;
 
             Rectangle cameraRelativeRectangle = new Rectangle(
-                camera.scope.X - destinationRectangle.X,
-                camera.scope.Y - destinationRectangle.Y,
+                destinationRectangle.X - camera.scope.X,
+                destinationRectangle.Y - camera.scope.Y,
                 (int)(destinationRectangle.Width * screenScaleRatioX),
                 (int)(destinationRectangle.Height * screenScaleRatioY)
             );
