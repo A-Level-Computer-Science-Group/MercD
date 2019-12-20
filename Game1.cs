@@ -10,8 +10,6 @@ namespace main
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         ScreenResolution screenResolution = new ScreenResolution();
-        CameraRelative cameraRelative;
-        Rectangle destinationRectangle = new Rectangle(0,0,100,100);
         Texture2D texture;
         public Game1()
         {
@@ -52,8 +50,10 @@ namespace main
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            Rectangle destinationRectangle = new Rectangle(0, 0, 100, 100);
+
             // TODO: Add your drawing code here
-            cameraRelative.Draw(texture, destinationRectangle, spriteBatch, screenResolution);
+            (new CameraRelative(new Camera.Camera(new Rectangle(0, 0, 200, 200)))).Draw(texture, destinationRectangle, spriteBatch, screenResolution);
 
             base.Draw(gameTime);
         }
