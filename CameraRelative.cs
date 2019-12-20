@@ -12,8 +12,8 @@ namespace Camera
         }
         public void Draw(Texture2D texture, Rectangle destinationRectangle, SpriteBatch spriteBatch, ScreenResolution screenResolution)
         {
-            float screenScaleX = screenResolution.width / camera.scope.X;
-            float screenScaleY = screenResolution.height / camera.scope.Y;
+            float screenScaleRatioX = screenResolution.width / camera.scope.X;
+            float screenScaleRatioY = screenResolution.height / camera.scope.Y;
             Rectangle cameraRelativeRectangle = new Rectangle(
                 camera.scope.X - destinationRectangle.X,
                 camera.scope.Y - destinationRectangle.Y,
