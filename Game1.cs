@@ -11,6 +11,7 @@ namespace main
         SpriteBatch spriteBatch;
         ScreenResolution screenResolution = new ScreenResolution();
         Texture2D texture;
+        Camera.Camera camera = new Camera.Camera(new Rectangle(0, 0, 200, 200));
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -43,7 +44,6 @@ namespace main
             // TODO: Add your update logic here
             screenResolution.Update(Window);
             screenResolution.ConsoleWrite();
-            
             base.Update(gameTime);
         }
 
@@ -53,6 +53,7 @@ namespace main
 
             Rectangle destinationRectangle = new Rectangle(0, 0, 100, 100);
             spriteBatch.Begin();
+            camera.Update(gameTime);
             // TODO: Add your drawing code here
             (new CameraRelative(new Camera.Camera(new Rectangle(0, 0, 200, 200)))).Draw(texture, destinationRectangle, spriteBatch, screenResolution);
 
