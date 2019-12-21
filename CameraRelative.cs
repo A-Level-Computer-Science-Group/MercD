@@ -17,14 +17,14 @@ namespace Camera
             float screenScaleRatioY = (float)screenResolution.height / (float)camera.scope.Height;
 
             Rectangle cameraRelativeRectangle = new Rectangle(
-                camera.scope.X - destinationRectangle.X,
-                camera.scope.Y - destinationRectangle.Y,
+                destinationRectangle.X - camera.scope.X,
+                destinationRectangle.Y - camera.scope.Y,
                 (int)(destinationRectangle.Width * screenScaleRatioX),
                 (int)(destinationRectangle.Height * screenScaleRatioY)
             );
             if (destinationRectangle.Intersects(camera.scope))
             {
-                spriteBatch.Draw(texture, cameraRelativeRectangle, Color.Black);
+                spriteBatch.Draw(texture, cameraRelativeRectangle, Color.White);
             }
         }
     }
