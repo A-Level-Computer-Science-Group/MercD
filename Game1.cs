@@ -40,7 +40,6 @@ namespace main
                 Exit();
             // TODO: Add your update logic here
             screenResolution.Update(Window);
-            screenResolution.ConsoleWrite();
             base.Update(gameTime);
         }
 
