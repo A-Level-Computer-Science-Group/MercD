@@ -1,22 +1,18 @@
-
 image: "mono"
 
 before_script:
   - apt-get update
-  - apt-get install wget
+  - apt-get install wget apt-transport-https fonts-dejavu -y
   - wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
   - dpkg -i packages-microsoft-prod.deb
-  - apt-get install apt-transport-https -y
   - apt-get update
-  - apt-get install dotnet-sdk-3.0 -y
-  - apt-get install fonts-dejavu -y
-  # For some reason I need this for fonts to work with monogame.
-  - apt-get install fontconfig tree -y
+  # For some reason I need `fontconfig` for fonts to work with monogame.
+  - apt-get install dotnet-sdk-3.0 fontconfig -y
 
 stages:
   - check
   - deploy-examples
-
+  - lint
 
 build:
   stage: check
@@ -31,7 +27,6 @@ windows-optimized:
     - rm -r -f files
     - mkdir files
     - cp -r bin/ files
-    - tree
   when: on_success
   artifacts:
     paths:
@@ -46,9 +41,16 @@ linux-optimized:
     - rm -r -f files
     - mkdir files
     - cp -r bin/ files
-    - tree
   when: on_success
   artifacts:
     paths:
       - files
     expire_in: 2 weeks
+
+format:
+  stage: lint
+  script:
+    - dotnet tool install -g dotnet-format
+    # Need to add to path so linux can find `dotnet-format` without a restart
+    - export PATH=/root/.dotnet/tools:$PATH
+    - dotnet-format --check --dry-run
