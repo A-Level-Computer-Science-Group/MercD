@@ -9,6 +9,10 @@ namespace main
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        // textures
+        private Texture2D whitePixel;
+
         ScreenResolution screenResolution = new ScreenResolution();
         public Game1()
         {
@@ -33,6 +37,7 @@ namespace main
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            whitePixel = Content.Load<Texture2D>("white_pixel");
         }
         protected override void Update(GameTime gameTime)
         {
@@ -47,7 +52,11 @@ namespace main
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(whitePixel, new Rectangle(200, 100, 200, 100), Color.Blue);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
