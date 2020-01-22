@@ -2,12 +2,12 @@ using Microsoft.Xna.Framework;
 
 namespace main
 {
-   // this intersection class compares two rectangles to output a boolean result based on the outcome.
+    // this intersection class compares two rectangles to output a boolean result based on the outcome.
     public static class intersection
     {
-       /*The intersect function compares if atleast one x co-ordinate is contained within 
-       either the first rectangle or the second rectangle and also the y co-ordinate is
-       contained with either the first or the second rectangle. */
+        /*The intersect function compares if atleast one x co-ordinate is contained within 
+        either the first rectangle or the second rectangle and also the y co-ordinate is
+        contained with either the first or the second rectangle. */
         static bool intersect(Rectangle first, Rectangle second) =>
             ((first.Bottom < second.Bottom) && (first.Bottom < second.Top)
             || ((second.Bottom < first.Top) && (second.Bottom > first.Bottom))
