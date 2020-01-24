@@ -54,7 +54,27 @@ namespace main
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(whitePixel, new Rectangle(200, 100, 200, 100), Color.Blue);
+            // Draw Arena
+            // borders
+            var borderColor = Color.Black;
+            spriteBatch.Draw(whitePixel, new Rectangle(0, 0, screenResolution.width, screenResolution.height/10), borderColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(0, screenResolution.height*9/10, screenResolution.width, screenResolution.height/10), borderColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(0, 0, screenResolution.width/10, screenResolution.height), borderColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*9/10, 0, screenResolution.width/10, screenResolution.height), borderColor);
+
+            // platforms
+            var platformColor = Color.Blue;
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*1/10, screenResolution.height*2/10, screenResolution.width*2/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*6/10, screenResolution.height*2/10, screenResolution.width*3/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*3/10, screenResolution.height*3/10, screenResolution.width*1/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*7/10, screenResolution.height*4/10, screenResolution.width*2/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*1/10, screenResolution.height*5/10, screenResolution.width*2/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*4/10, screenResolution.height*5/10, screenResolution.width*1/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*7/10, screenResolution.height*6/10, screenResolution.width*2/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*1/10, screenResolution.height*7/10, screenResolution.width*3/10, screenResolution.height*1/10), platformColor);
+            spriteBatch.Draw(whitePixel, new Rectangle(screenResolution.width*5/10, screenResolution.height*7/10, screenResolution.width*4/10, screenResolution.height*1/10), platformColor);
+
+            // End Arena
 
             spriteBatch.End();
 
