@@ -36,7 +36,7 @@ namespace main
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+
             // TODO: use this.Content to load your game content here
             whitePixel = Content.Load<Texture2D>("white_pixel");
         }
