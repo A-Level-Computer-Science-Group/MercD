@@ -5,28 +5,42 @@ namespace main
 {
     public class Settings
     {
-        public Settings()
+        public bool fullScreen;
+        public string playerName;
+        public string musicVolume;
+        public string masterVolume;
+        public string forward;
+        public string backward;
+        public string right;
+        public string left;
+        public string jump;
+        public string interact;
+        
+        public void readFile()
         {
+            
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile("Settings.ini");
             string useFullScreenStr = data["General"]["fullscreen"];
-            bool useFullScreen = bool.Parse(useFullScreenStr);
-            string usePlayerName = data["General"]["PlayerName"];
+            bool fullScreen = bool.Parse(useFullScreenStr);
+            string playerName = data["General"]["PlayerName"];
             string useMusicVolumeInt = data["Audio"]["MusicVolume"];
-            int useMusicVolume = int.Parse(useMusicVolumeInt);
+            int musicVolume = int.Parse(useMusicVolumeInt);
             string useMasterVolumeInt = data["Audio"]["MasterVolume"];
-            int useMasterVolume = int.Parse(useMasterVolumeInt);
+            int masterVolume = int.Parse(useMasterVolumeInt);
             string useForwardChar = data["Controls"]["Forward"];
-            char useForward = char.Parse(useForwardChar);
+            char forward = char.Parse(useForwardChar);
             string useBackwardChar = data["Controls"]["Backward"];
-            char useBackward = char.Parse(useBackwardChar);
+            char backward = char.Parse(useBackwardChar);
             string useLeftChar = data["Controls"]["Left"];
-            char useLeft = char.Parse(useLeftChar);
+            char left = char.Parse(useLeftChar);
             string useRightChar = data["Controls"]["Right"];
-            char useRight = char.Parse(useRightChar);
-            string useJump = data["Controls"]["Jump"];
+            char right = char.Parse(useRightChar);
+            string jump = data["Controls"]["Jump"];
             string useInteractChar = data["Controls"]["Interact"];
-            char useInteract = char.Parse(useInteractChar);
+            char interact = char.Parse(useInteractChar);
+        
         }  
+        
     }
 }
