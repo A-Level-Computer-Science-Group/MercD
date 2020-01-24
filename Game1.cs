@@ -45,6 +45,9 @@ namespace main
                 Exit();
             // TODO: Add your update logic here
             screenResolution.Update(Window);
+
+            if (settings.consoleDebugScreenDimensions) screenResolution.ConsoleWrite();
+
             base.Update(gameTime);
         }
 
