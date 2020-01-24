@@ -7,7 +7,7 @@ namespace main
     {
         public bool consoleDebugScreenDimensions;
         
-        public void Settings()
+        public Settings()
         {
             var parser = new FileIniDataParser();
             IniData data = parser.ReadFile("Settings.ini");
