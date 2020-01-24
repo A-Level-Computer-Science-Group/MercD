@@ -6,6 +6,7 @@ namespace main
 {
     public class Game1 : Game
     {
+        Settings settings = new Settings();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -26,7 +27,6 @@ namespace main
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             // TODO: use this.Content to load your game content here
         }
 
