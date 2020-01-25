@@ -7,6 +7,11 @@ namespace main
 {
     public class Game1 : Game
     {
+<<<<<<< HEAD
+=======
+        
+        Settings settings = new Settings();
+>>>>>>> 0bbfd71... Weird Error
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
