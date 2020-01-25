@@ -7,7 +7,7 @@ before_script:
   - dpkg -i packages-microsoft-prod.deb
   - apt-get update
   # For some reason I need `fontconfig` for fonts to work with monogame.
-  - apt-get install dotnet-sdk-3.0 fontconfig -y
+  - apt-get install dotnet-sdk-3.1 nuget fontconfig -y
 
 stages:
   - check
