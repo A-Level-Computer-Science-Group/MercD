@@ -7,6 +7,7 @@ namespace main
     // An `Entity` is a visible object.
     interface Entity
     {
+        // TODO pass in keyboard info.
         void Update(double interval);
         void Draw(SpriteBatch spriteBatch);
     }
