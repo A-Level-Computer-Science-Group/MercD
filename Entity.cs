@@ -29,7 +29,7 @@ namespace main
         public void Update(double interval) { }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, rect, color);
+            spriteBatch.Draw(texture, scope, color);
         }
 
     }
