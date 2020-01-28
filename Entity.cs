@@ -17,11 +17,13 @@ namespace main
     {
         Rectangle scope;
         Texture2D texture;
+        Color color;
 
         SimpleEntity(Rectangle scope, Texture2D texture, Color color)
         {
             this.scope = scope;
             this.texture = texture;
+            this.color = color;
         }
 
         public void Update(double interval) { }
