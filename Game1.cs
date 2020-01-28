@@ -10,10 +10,11 @@ namespace main
         Settings settings = new Settings();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
         // textures
         private Texture2D whitePixel;
-
+        private Vector2 position;
+        private TimeSpan lastTime;
+        private float interval;
         ScreenResolution screenResolution = new ScreenResolution();
         public Game1()
         {
@@ -31,6 +32,8 @@ namespace main
             // TODO: Add your initialization logic here
             Window.AllowUserResizing = true;
             base.Initialize();
+            position.X = 100; position.Y = 100;
+
         }
 
         protected override void LoadContent()
@@ -46,22 +49,19 @@ namespace main
                 Exit();
             // TODO: Add your update logic here
             screenResolution.Update(Window);
-
+            
             if (settings.consoleDebugScreenDimensions) screenResolution.ConsoleWrite();
-
+            
             base.Update(gameTime);
+            lastTime = gameTime.TotalGameTime;
+            interval = (float)(gameTime.TotalGameTime - lastTime).TotalSeconds;
+            Controls controls = new Controls(whitePixel, position);
+            controls.Update(interval);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
-
-            spriteBatch.Draw(whitePixel, new Rectangle(200, 100, 200, 100), Color.Blue);
-
-            spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }
