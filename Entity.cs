@@ -4,12 +4,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace main
 {
+    // An `Entity` is a visible object.
     interface Entity
     {
         void Update(double interval);
         void Draw(SpriteBatch spriteBatch);
     }
 
+    // Simple Entity that other Entities can be composed of.
     class SimpleEntity : Entity
     {
         Rectangle scope;
